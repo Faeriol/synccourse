@@ -63,7 +63,7 @@ def main():
                 commit(repo)
             elif intent == "push":
                 repo.remotes.origin.push()
-            elif intent == "sync":
+            elif (intent == "sync") and repo.is_dirty():
                 add(repo)
                 commit(repo)
                 repo.remotes.origin.push()
